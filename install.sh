@@ -27,6 +27,7 @@ php -r "unlink('composer-setup.php');"
 
 #SabreDAV WebDAV client
 composer require sabre/dav
+sudo mv vendor /var/www/html
 
 #Copy files from TAR file
 sudo tar xvjf pizerowframe.tar.bz2 --no-overwrite-dir -C /

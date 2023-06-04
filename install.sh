@@ -17,7 +17,7 @@ sudo echo "ServerName localhost" >> /etc/apache2/httpd.conf
 sudo chown -R www-data:www-data /var/www/html
 
 #PHP
-sudo apt-get install -y php php-xml libapache2-mod-php
+sudo apt-get install -y php php-curl php-xml libapache2-mod-php
 
 #Composer
 php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"

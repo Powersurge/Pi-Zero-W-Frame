@@ -27,6 +27,11 @@ sudo apt-get install rclone
 sudo tar xvjf pizerowframe.tar.bz2 --no-overwrite-dir -C /
 sudo chown -R www-data:www-data /usr/share/pizerowframe
 
+#Permissions
+if ! grep -q "www-data  ALL=NOPASSWD: /usr/share/pizerowframe/hostname.sh" "/etc/sudoers" ; then
+         echo "www-data  ALL=NOPASSWD: /usr/share/pizerowframe/hostname.sh" >> /etc/sudoers
+fi
+
 #Almost done!
 echo
 echo Pi Zero W Frame can now be configured with your web browser pointed at http://$ipaddress. Use \"pizerowframe\" to log in and be sure to change the password!

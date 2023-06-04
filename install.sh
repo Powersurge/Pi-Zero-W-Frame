@@ -14,6 +14,7 @@ sudo apt-get update
 #Apache
 sudo apt-get install -y apache2
 sudo echo "ServerName localhost" >> /etc/apache2/httpd.conf
+sudo chown -R www-data:www-data /var/www/html
 
 #PHP
 sudo apt-get install -y php libapache2-mod-php

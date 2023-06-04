@@ -32,6 +32,9 @@ if ! grep -q "www-data  ALL=NOPASSWD: /usr/share/pizerowframe/hostname.sh" "/etc
          echo "www-data  ALL=NOPASSWD: /usr/share/pizerowframe/hostname.sh" >> /etc/sudoers
 fi
 
+#Set Hostname
+sudo hostnamectl set-hostname pizerowframe
+
 #Almost done!
 echo
 echo Pi Zero W Frame can now be configured with your web browser pointed at http://$ipaddress. Use \"pizerowframe\" to log in and be sure to change the password!

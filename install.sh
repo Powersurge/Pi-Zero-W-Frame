@@ -28,7 +28,7 @@ sudo tar xvjf pizerowframe.tar.bz2 --no-overwrite-dir -C /
 sudo chown -R www-data:www-data /usr/share/pizerowframe
 
 #Permissions
-if grep -qs "www-data  ALL=NOPASSWD: /usr/share/pizerowframe/hostname.sh" "/etc/sudoers"; then
+if ! grep -xq "www-data  ALL=NOPASSWD: /usr/share/pizerowframe/hostname.sh" "/etc/sudoers"; then
          echo "www-data  ALL=NOPASSWD: /usr/share/pizerowframe/hostname.sh" | sudo tee -a /etc/sudoers
 fi
 

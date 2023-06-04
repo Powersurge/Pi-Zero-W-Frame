@@ -33,7 +33,7 @@ sudo tar xvjf pizerowframe.tar.bz2 --no-overwrite-dir -C /
 
 #Almost done!
 echo
-echo Pi Zero W Frame can now be configured with your web browser pointed at http://$ipaddress. Use "pizerowframe" to log in and be sure to change the password!
+echo Pi Zero W Frame can now be configured with your web browser pointed at http://$ipaddress. Use \"pizerowframe\" to log in and be sure to change the password!
 echo
 read -p "Press [Enter] key to continue..."
 echo

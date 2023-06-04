@@ -17,7 +17,7 @@ sudo echo "ServerName localhost" >> /etc/apache2/httpd.conf
 sudo chown -R www-data:www-data /var/www/html
 
 #PHP
-sudo apt-get install -y php php-curl php-xml libapache2-mod-php
+sudo apt-get install -y php libapache2-mod-php
 
 #Rclone
 sudo apt-get install rclone

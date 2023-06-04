@@ -13,7 +13,7 @@ sudo apt-get update
 
 #Apache
 sudo apt-get install -y apache2
-#sudo echo "ServerName localhost" >> /etc/apache2/httpd.conf
+sudo echo "ServerName localhost" >> /etc/apache2/httpd.conf
 sudo chown -R www-data:www-data /var/www/html
 sudo rm -f /var/www/html/*
 
@@ -28,7 +28,7 @@ sudo tar xvjf pizerowframe.tar.bz2 --no-overwrite-dir -C /
 sudo chown -R www-data:www-data /usr/share/pizerowframe
 
 #Permissions
-if ! grep -q "www-data  ALL=NOPASSWD: /usr/share/pizerowframe/hostname.sh" "/etc/sudoers" ; then
+if ! grep -q "www-data  ALL=NOPASSWD: /usr/share/pizerowframe/hostname.sh" "/etc/sudoers" 2> /dev/null; then
          echo "www-data  ALL=NOPASSWD: /usr/share/pizerowframe/hostname.sh" | sudo tee -a /etc/sudoers
 fi
 

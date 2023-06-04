@@ -15,6 +15,7 @@ sudo apt-get update
 sudo apt-get install -y apache2
 sudo echo "ServerName localhost" >> /etc/apache2/httpd.conf
 sudo chown -R www-data:www-data /var/www/html
+sudo rm -f /var/www/html/*
 
 #PHP
 sudo apt-get install -y php libapache2-mod-php
@@ -24,7 +25,7 @@ sudo apt-get install rclone
 
 #Copy files from TAR file and set permissions
 sudo tar xvjf pizerowframe.tar.bz2 --no-overwrite-dir -C /
-sudo chmod 755 /usr/share/pizerowframe/*
+sudo chown -R www-data:www-data /usr/share/pizerowframe
 
 #Almost done!
 echo

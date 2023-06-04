@@ -22,8 +22,9 @@ sudo apt-get install -y php libapache2-mod-php
 #Rclone
 sudo apt-get install rclone
 
-#Copy files from TAR file
+#Copy files from TAR file and set permissions
 sudo tar xvjf pizerowframe.tar.bz2 --no-overwrite-dir -C /
+sudo chmod 755 /usr/share/pizerowframe/*
 
 #Almost done!
 echo

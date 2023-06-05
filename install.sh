@@ -29,7 +29,10 @@ sudo chown -R www-data:www-data /usr/share/pizerowframe
 
 #Permissions
 if ! grep -xqs "www-data  ALL=NOPASSWD: /usr/share/pizerowframe/hostname.sh" /etc/sudoers; then
-         echo "www-data  ALL=NOPASSWD: /usr/share/pizerowframe/hostname.sh" | sudo tee -a /etc/sudoers
+#         echo "www-data  ALL=NOPASSWD: /usr/share/pizerowframe/hostname.sh" | sudo tee -a /etc/sudoers
+echo "false"
+else
+echo "true"
 fi
 
 #Set Hostname

@@ -26,6 +26,7 @@ sudo apt-get install rclone
 #Copy files from TAR file and set permissions
 sudo tar xvjf pizerowframe.tar.bz2 --no-overwrite-dir -C /
 sudo chown -R www-data:www-data /usr/share/pizerowframe
+sudo chown root:root /etc/cron.d/checkin
 
 #Permissions
 if ! sudo grep -xqs "www-data  ALL=NOPASSWD: /usr/share/pizerowframe/run_sudo.sh" /etc/sudoers; then

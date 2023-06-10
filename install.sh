@@ -22,15 +22,22 @@ sudo apt-get install -y php libapache2-mod-php
 #Rclone
 sudo apt-get install rclone
 
-#Copy files from TAR file and set permissions
+#Copy files from TAR file
 sudo tar xvjf pizerowframe.tar.bz2 --no-overwrite-dir -C /
-sudo chown -R www-data:www-data /usr/share/pizerowframe
-sudo chown root:root /etc/cron.d/checkin
+
+#Watchdog
+sudo apt-get install python3
+sudo pip3 install watchdog
+sudo systemctl daemon-reload
+sudo systemctl enable usbshare.service
+sudo systemctl start usbshare.service
 
 #Permissions
 if ! sudo grep -xqs "www-data  ALL=NOPASSWD: /usr/share/pizerowframe/run_sudo.sh" /etc/sudoers; then
   echo "www-data  ALL=NOPASSWD: /usr/share/pizerowframe/run_sudo.sh" | sudo tee -a /etc/sudoers
 fi
+sudo chown -R www-data:www-data /usr/share/pizerowframe
+sudo chown root:root /etc/cron.d/checkin
 
 #Almost done!
 echo

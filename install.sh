@@ -20,7 +20,7 @@ sudo rm -f /var/www/html/*
 sudo apt-get install -y php libapache2-mod-php
 
 #Rclone
-sudo apt-get install rclone
+sudo apt-get install -y rclone
 
 #Copy files from TAR file
 sudo tar xvjf pizerowframe.tar.bz2 --no-overwrite-dir -C /
@@ -34,7 +34,7 @@ sudo chown root:root /etc/cron.d/checkin
 sudo chown root:root /etc/systemd/system/usbshare.service
 
 #Watchdog
-sudo apt-get install python3 python3-pip
+sudo apt-get install -y python3 python3-pip
 sudo pip3 install watchdog
 sudo systemctl daemon-reload
 sudo systemctl enable usbshare.service

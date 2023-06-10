@@ -26,7 +26,7 @@ sudo apt-get install rclone
 sudo tar xvjf pizerowframe.tar.bz2 --no-overwrite-dir -C /
 
 #Watchdog
-sudo apt-get install python3
+sudo apt-get install python3 python3-pip
 sudo pip3 install watchdog
 sudo systemctl daemon-reload
 sudo systemctl enable usbshare.service

@@ -40,6 +40,14 @@ sudo systemctl daemon-reload
 sudo systemctl enable usbshare.service
 sudo systemctl start usbshare.service
 
+#Enable the USB driver
+if ! sudo grep -xqs "dtoverlay=dwc2" /boot/config.txt; then
+  echo "dtoverlay=dwc2" | sudo tee -a /boot/config.txt
+fi
+if ! sudo grep -xqs "dwc2" /etc/modules; then
+  echo "dwc2" | sudo tee -a /etc/modules
+fi
+
 #Almost done!
 echo
 echo Pi Zero W Frame can now be configured with your web browser pointed at http://$ipaddress. Use \"pizerowframe\" to log in and be sure to change the password!

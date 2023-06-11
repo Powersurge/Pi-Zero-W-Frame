@@ -48,6 +48,10 @@ if ! sudo grep -xqs "dwc2" /etc/modules; then
   echo "dwc2" | sudo tee -a /etc/modules
 fi
 
+#Set hostname
+sudo hostnamectl set-hostname pizerowframe
+sudo touch /usr/share/pizerowframe/reboot
+
 #Almost done!
 echo
 echo Pi Zero W Frame can now be configured with your web browser pointed at http://$ipaddress. Use \"pizerowframe\" to log in and be sure to change the password!

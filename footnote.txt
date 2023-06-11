@@ -1,1 +1,1 @@
-Please visit our <a href="https://github.com/Powersurge/Pi-Zero-W-Frame">Github Page</a> for support and to report any bugs.
+Please visit our <a href="https://github.com/Powersurge/Pi-Zero-W-Frame" target="_blank">Github Page</a> for support and to report any bugs.

@@ -33,6 +33,7 @@ fi
 sudo chown -R www-data:www-data /usr/share/pizerowframe
 sudo chown root:root /etc/cron.d/checkin
 sudo chown root:root /etc/systemd/system/usbshare.service
+sudo chmod +x /usr/share/pizerowframe/usb_share.py
 
 #Watchdog
 sudo apt-get install -y python3 python3-pip

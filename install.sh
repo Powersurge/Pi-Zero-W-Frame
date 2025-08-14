@@ -6,11 +6,13 @@
 #########################################################################
 
 #!/bin/bash
-#ipaddress=$(ip addr | grep 'state UP' -A2 | tail -n1 | awk '{print $2}' | cut -f1  -d'/');
-ipaddress=$(ip -j a | jq -r 'map(select(.operstate == "UP"))|map(.addr_info) | map(map(select(.family == "inet").local)) | flatten | .[]');
 
 #Prerequisites
 sudo apt-get update
+sudo apt install jq
+
+#ipaddress=$(ip addr | grep 'state UP' -A2 | tail -n1 | awk '{print $2}' | cut -f1  -d'/');
+ipaddress=$(ip -j a | jq -r 'map(select(.operstate == "UP"))|map(.addr_info) | map(map(select(.family == "inet").local)) | flatten | .[]');
 
 #Apache
 sudo apt-get install -y apache2

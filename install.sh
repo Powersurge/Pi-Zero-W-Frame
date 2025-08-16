@@ -45,8 +45,8 @@ sudo systemctl enable usbshare.service
 sudo systemctl start usbshare.service
 
 #Enable the USB driver
-if ! sudo grep -xqs "dtoverlay=dwc2" /boot/config.txt; then
-  echo "dtoverlay=dwc2" | sudo tee -a /boot/config.txt
+if ! sudo grep -xqs "dtoverlay=dwc2" /boot/firmware/config.txt; then
+  echo "dtoverlay=dwc2" | sudo tee -a /boot/firmware/config.txt
 fi
 if ! sudo grep -xqs "dwc2" /etc/modules; then
   echo "dwc2" | sudo tee -a /etc/modules

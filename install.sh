@@ -34,15 +34,18 @@ if ! sudo grep -xqs "www-data  ALL=NOPASSWD: /usr/share/pizerowframe/run_sudo.sh
 fi
 sudo chown -R www-data:www-data /usr/share/pizerowframe
 sudo chown root:root /etc/cron.d/checkin
-sudo chown root:root /etc/systemd/system/usbshare.service
+sudo chown root:root /etc/systemd/system/usb_share.service
+sudo chown root:root /etc/systemd/system/usb_gadget.service
 sudo chmod +x /usr/share/pizerowframe/usb_share.sh
-sudo chmod +x /usr/share/pizerowframe/usb_mass_storage_gadget.sh
+sudo chmod +x /usr/share/pizerowframe/usb_gadget.sh
 
 #Watchdog
 sudo apt-get install -y inotify-tools
 sudo systemctl daemon-reload
-sudo systemctl enable usbshare.service
-sudo systemctl start usbshare.service
+sudo systemctl enable usb_share.service
+sudo systemctl enable usb_gadget.service
+sudo systemctl start usb_share.service
+sudo systemctl start usb_gadget.service
 
 #Enable the USB driver
 if ! sudo grep -xqs "dtoverlay=dwc2" /boot/firmware/config.txt; then

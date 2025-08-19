@@ -1,6 +1,6 @@
 #########################################################################
 #Pi Zero W Frame                                                        #
-#This script will install Apache, PHP, Python3, and Rclone.             #
+#This script will install Apache, PHP, and Rclone.             #
 #This script was written by Chris Newell                                #
 #[C] 2023 Chris Newell: See LICENSE.md for details                      #
 #########################################################################
@@ -35,11 +35,10 @@ fi
 sudo chown -R www-data:www-data /usr/share/pizerowframe
 sudo chown root:root /etc/cron.d/checkin
 sudo chown root:root /etc/systemd/system/usbshare.service
-sudo chmod +x /usr/share/pizerowframe/usb_share.py
+sudo chmod +x /usr/share/pizerowframe/usb_share.sh
 
 #Watchdog
-sudo apt-get install -y python3 python3-pip
-sudo pip3 install watchdog
+sudo apt-get install -y inotify-tools
 sudo systemctl daemon-reload
 sudo systemctl enable usbshare.service
 sudo systemctl start usbshare.service

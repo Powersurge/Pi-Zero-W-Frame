@@ -36,6 +36,7 @@ sudo chown -R www-data:www-data /usr/share/pizerowframe
 sudo chown root:root /etc/cron.d/checkin
 sudo chown root:root /etc/systemd/system/usbshare.service
 sudo chmod +x /usr/share/pizerowframe/usb_share.sh
+sudo chmod +x /usr/share/pizerowframe/usb_mass_storage_gadget.sh
 
 #Watchdog
 sudo apt-get install -y inotify-tools
@@ -49,6 +50,9 @@ if ! sudo grep -xqs "dtoverlay=dwc2" /boot/firmware/config.txt; then
 fi
 if ! sudo grep -xqs "dwc2" /etc/modules; then
   echo "dwc2" | sudo tee -a /etc/modules
+fi
+if ! sudo grep -xqs "libcomposite" /etc/modules; then
+  echo "libcomposite" | sudo tee -a /etc/modules
 fi
 
 #Set hostname

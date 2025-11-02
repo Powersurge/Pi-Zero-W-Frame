@@ -2,7 +2,7 @@
 #Pi Zero W Frame                                                        #
 #This script will install Apache, PHP, Inotify-Tools, and Rclone.             #
 #This script was written by Chris Newell                                #
-#[C] 2023 Chris Newell: See LICENSE.md for details                      #
+#[C] 2025 Chris Newell: See LICENSE.md for details                      #
 #########################################################################
 
 #!/bin/bash

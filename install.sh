@@ -40,11 +40,12 @@ sudo chmod +x /usr/share/pizerowframe/usb_share.sh
 sudo chmod +x /usr/share/pizerowframe/usb_gadget.sh
 
 #Watchdog
+sudo apt-get install -y inotify-tools
 sudo systemctl daemon-reload
-sudo systemctl enable usb_gadget.service
+sudo systemctl enable usb_share.service
+sudo systemctl enable usb_gadget.servic
+sudo systemctl start usb_share.servicee
 sudo systemctl start usb_gadget.service
-sudo systemctl enable monitor-usb.path
-sudo systemctl start monitor-usb.path
 
 #Enable the USB driver
 if ! sudo grep -xqs "dtoverlay=dwc2" /boot/firmware/config.txt; then
